@@ -46,3 +46,18 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+
+# How to run this application?
+Run the application index.html in the browser. The application has a menu(hamburger icon). On click of an item in the menu ,the corresponding content is loaded. Below the contents are the test results for checking the smooth running of the application. Success is indicated by green color with description of the test. Red indicated failure of test specification.
+
+
+# How to does the application work?
+The application contains the following files:-
+1. index.html (to render results of feeds and its content)
+2. feedreader.js (contains jasmine test specifications for feedreader)
+3. app.js (jQuery file to help render the feeds and allow interaction on the web page)
+4. css files
+5. font files
+
+

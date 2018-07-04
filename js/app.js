@@ -29,6 +29,7 @@ var allFeeds = [
  */
 function init() {
     // Load the first feed we've defined (index of 0).
+    console.log("init");
     loadFeed(0);
 }
 
@@ -41,6 +42,7 @@ function init() {
  * which will be called after everything has run successfully.
  */
  function loadFeed(id, cb) {
+     console.log("loadFeed");
      var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 
@@ -50,7 +52,7 @@ function init() {
        data: JSON.stringify({url: feedUrl}),
        contentType:"application/json",
        success: function (result, status){
-
+                console.log("ajax success");
                  var container = $('.feed'),
                      title = $('.header-title'),
                      entries = result.feed.entries,
@@ -66,6 +68,7 @@ function init() {
                   * the resulting HTML to the list of entries on the page.
                   */
                  entries.forEach(function(entry) {
+                     console.log("entries for each");
                      container.append(entryTemplate(entry));
                  });
 
@@ -87,12 +90,13 @@ function init() {
  * to call when the Feed Reader API is done loading.
  */
 google.setOnLoadCallback(init);
-
+console.log("call setonloadcallback init");
 /* All of this functionality is heavily reliant upon the DOM, so we
  * place our code in the $() function to ensure it doesn't execute
  * until the DOM is ready.
  */
 $(function() {
+    console.log("inside function");
     var container = $('.feed'),
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
@@ -106,6 +110,7 @@ $(function() {
      * available feeds within the menu.
      */
     allFeeds.forEach(function(feed) {
+        console.log("allFeeds for each");
         feed.id = feedId;
         feedList.append(feedItemTemplate(feed));
 
