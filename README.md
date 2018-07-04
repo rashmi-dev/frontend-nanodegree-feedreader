@@ -49,7 +49,7 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 
 
 # How to run this application?
-Run the application index.html in the browser. The application has a menu(hamburger icon). On click of an item in the menu ,the corresponding content is loaded. Below the contents are the test results for checking the smooth running of the application. Success is indicated by green color with description of the test. Red indicated failure of test specification.
+Run the file index.html in the browser. The application has a menu(hamburger icon). On click of an item in the menu ,the corresponding content is loaded. Below the contents are the test results for checking the smooth running of the application. Success is indicated by green color with description of the test. Red indicates failure of test specification.
 
 
 # How to does the application work?
