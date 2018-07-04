@@ -90,7 +90,7 @@ $(function() {
         
         it('when loadFeed completes its work there is atleast single entry', function(done) {
             $feed = $(".feed").children().find("article");
-            expect($feed.length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             expect($feed.hasClass('entry')).toBeTruthy();
             done();
         });
@@ -102,18 +102,22 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        var id = 2;// any number between 0-3
+        
+        var initialFeed;
+        var finalFeed;
+        
         beforeEach(function(done) {
-            $(".feed-list").children().find("a").attr("data-id",id).trigger('click');
-            loadFeed(id,function() {
-               done(); 
-            });
+            loadFeed(0,done);
+        });
+        
+        beforeEach(function(done) {
+           initialFeed =  $('.feed').html();
+           loadFeed(1,done);
         });
             
         it('when new feed is loaded content actually changes', function(done) {
-            expect($(".feed-list").children().find("a").length).toBeGreaterThan(0);
-            expect(allFeeds[id].name).toBe($(".feed-list").children().find("a").eq(id).text());
-            expect($(".header-title").text()).toBe(allFeeds[id].name);
+            finalFeed = $('.feed').html();
+            expect(finalFeed).not.toBe(initialFeed);
             done();
         });
     });
